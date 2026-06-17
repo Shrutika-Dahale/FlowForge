@@ -18,14 +18,14 @@ function ProjectDetail({ projectId, onBack }) {
 
       // Fetch project info
       const projectRes = await axios.get(
-        `http://localhost:5000/api/project/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/project/${projectId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setProject(projectRes.data.project);
 
       // Fetch my applications and find if applied to this one
       const appRes = await axios.get(
-        "http://localhost:5000/api/application/my",
+        "https://flowforge-backend-ud7x.onrender.com/api/application/my",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const allApps = appRes.data.applications || [];
@@ -41,7 +41,7 @@ function ProjectDetail({ projectId, onBack }) {
   const applyProject = async () => {
     try {
       await axios.post(
-        `http://localhost:5000/api/application/apply/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/application/apply/${projectId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
