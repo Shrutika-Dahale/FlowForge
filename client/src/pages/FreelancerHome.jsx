@@ -32,7 +32,7 @@ function FreelancerDashboard({ setIsLoggedIn }) {
   // GET ALL PROJECTS
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/project/all", {
+      const res = await axios.get("https://flowforge-backend-ud7x.onrender.com/api/project/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data.projects || []);
@@ -44,7 +44,7 @@ function FreelancerDashboard({ setIsLoggedIn }) {
   // GET MY APPLICATIONS
   const fetchApplications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/application/my", {
+      const res = await axios.get("https://flowforge-backend-ud7x.onrender.com/api/application/my", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setApplications(res.data.applications || []);
@@ -57,7 +57,7 @@ function FreelancerDashboard({ setIsLoggedIn }) {
   const applyProject = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/application/apply/${id}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/application/apply/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,7 +72,7 @@ function FreelancerDashboard({ setIsLoggedIn }) {
   const fetchUpdates = async (projectId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/updates/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/updates/${projectId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setUpdates((prev) => ({ ...prev, [projectId]: res.data }));
@@ -101,7 +101,7 @@ function FreelancerDashboard({ setIsLoggedIn }) {
     if (!message) return;
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/updates/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/updates/${projectId}`,
         { message },
         { headers: { Authorization: `Bearer ${token}` } }
       );
