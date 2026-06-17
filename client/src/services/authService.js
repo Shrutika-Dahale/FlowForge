@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://flowforge-backend-ud7x.onrender.com/api/auth";
 
 export const loginUser = (data) => axios.post(`${API}/login`, data);
 
