@@ -1,5 +1,5 @@
 const Update = require("../models/Update");
-const Project = require("../models/Project");
+const Project = require("../models/project");
 const Application = require("../models/Application");
 
 const isAuthorized = async (projectId, userId, role) => {
