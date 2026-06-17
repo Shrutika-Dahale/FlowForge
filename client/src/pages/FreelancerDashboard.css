@@ -1,0 +1,413 @@
+/* BACKGROUND */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg,
+      #e3f2fd 0%,
+      #f5faff 40%,
+      #dbeeff 100%);
+}
+
+/* MAIN CONTAINER */
+.fl-dashboard {
+  width: 100%;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.fl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* TITLE */
+.fl-title {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e88e5, #4da6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  padding-bottom: 5px;
+  margin: 0;
+}
+
+/* NAVBAR */
+.fl-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.fl-nav button {
+  background: transparent;
+  border: 2px solid #4da6ff;
+  color: #1e88e5;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.fl-nav button:hover,
+.fl-nav button.active {
+  background: linear-gradient(135deg, #4da6ff, #1e88e5);
+  color: white;
+}
+
+/* LOGOUT BUTTON */
+.fl-logout {
+  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+  color: white;
+  border: none;
+
+  padding: 6px 16px;
+  font-size: 13px;
+
+  border-radius: 20px;
+  cursor: pointer;
+
+  width: auto;
+  min-width: 80px;
+
+  transition: all 0.2s ease;
+}
+
+.fl-logout:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+
+/* SECTION */
+.fl-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.fl-section h2 {
+  margin-bottom: 15px;
+  color: #1e3a5f;
+  margin-top: 0;
+}
+
+/* APPLICATION SUMMARY */
+.fl-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.fl-summary-card {
+  flex: 1;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-align: center;
+  background: #f9fcff;
+  border: 1px solid #e3f0ff;
+}
+
+.fl-summary-card span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.fl-summary-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.fl-summary-card.accepted {
+  border-top: 4px solid #2e9e6b;
+}
+
+.fl-summary-card.pending {
+  border-top: 4px solid #c98a00;
+}
+
+.fl-summary-card.rejected {
+  border-top: 4px solid #d93025;
+}
+
+/* PROJECT / APPLICATION CARD */
+.fl-card {
+  border: 1px solid #e3f0ff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  background: #f9fcff;
+}
+
+.fl-card h3 {
+  margin: 0 0 6px 0;
+  color: #1e3a5f;
+  font-size: 16px;
+}
+
+.fl-card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* STATUS BADGE */
+.fl-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.fl-status.accepted {
+  background: #e6f9f0;
+  color: #2e9e6b;
+}
+
+.fl-status.pending {
+  background: #fff8e6;
+  color: #c98a00;
+}
+
+.fl-status.rejected {
+  background: #ffeaea;
+  color: #d93025;
+}
+
+/* APPLY BUTTON */
+.fl-apply-btn {
+  margin-top: 0;
+  background: linear-gradient(135deg, #4da6ff, #1e88e5);
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+  width: auto;
+  align-self: flex-start;
+}
+
+.fl-apply-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
+}
+
+.fl-apply-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* UPDATES TOGGLE BUTTON */
+.fl-updates-btn {
+  width: auto;
+  margin-top: 0;
+  padding: 7px 16px;
+  background: white;
+  border: 2px solid #4da6ff;
+  color: #1e88e5;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.fl-updates-btn:hover {
+  background: #4da6ff;
+  color: white;
+}
+
+/* UPDATES SECTION */
+.fl-updates-section {
+  margin-top: 14px;
+  border-top: 1px solid #e3f0ff;
+  padding-top: 14px;
+}
+
+/* INPUT + POST ROW */
+.fl-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.fl-input-row input {
+  flex: 5;
+  /* Bigger textbox */
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #cfe8ff;
+  font-size: 14px;
+  outline: none;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.fl-input-row input:focus {
+  border-color: #4da6ff;
+  box-shadow: 0 0 6px rgba(77, 166, 255, 0.3);
+}
+
+.fl-post-btn {
+  flex: 0;
+  padding: 10px 14px;
+  /* Smaller button */
+  min-width: 80px;
+  background: linear-gradient(135deg, #4da6ff, #1e88e5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.fl-post-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
+}
+
+/* UPDATE CARD */
+.fl-update-card {
+  border-left: 3px solid #4da6ff;
+  padding-left: 12px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.fl-update-author {
+  margin: 0;
+  font-weight: 700;
+  color: #1e3a5f;
+  font-size: 14px;
+}
+
+.fl-update-role {
+  font-weight: 400;
+  color: #888;
+  font-size: 12px;
+}
+
+.fl-update-message {
+  margin: 4px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.fl-update-time {
+  margin: 0;
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* EMPTY STATE */
+.fl-empty {
+  color: #aaa;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* WORKSPACE PANEL */
+.fl-workspace-panel {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #f9fcff;
+  border: 1px solid #d8ebff;
+}
+
+.fl-workspace-panel h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1e3a5f;
+}
+
+/* STATUS DOT */
+.fl-status-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.fl-app-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+
+.fl-project-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fl-project-info h3 {
+  margin: 0;
+}
+
+.fl-status-dot.active {
+  background: #2e9e6b;
+  box-shadow: 0 0 0 3px rgba(46, 158, 107, 0.2);
+}
+
+.fl-status-dot.inactive {
+  background: #d93025;
+  box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.2);
+}
+
+.fl-project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.fl-project-text {
+  text-align: left;
+  flex: 1;
+}
+
+.fl-project-text h3 {
+  margin: 0 0 4px 0;
+  color: #1e3a5f;
+  font-size: 16px;
+}
+
+.fl-project-text p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.fl-apply-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
