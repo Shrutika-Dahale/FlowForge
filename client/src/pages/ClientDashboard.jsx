@@ -21,7 +21,7 @@ function ClientDashboard({ setIsLoggedIn }) {
   const fetchProjects = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/project/projects",
+        "https://flowforge-backend-ud7x.onrender.com/api/project/projects",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -46,7 +46,7 @@ function ClientDashboard({ setIsLoggedIn }) {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/project/createProject",
+        "https://flowforge-backend-ud7x.onrender.com/api/project/createProject",
         form,
         {
           headers: {
@@ -68,7 +68,7 @@ function ClientDashboard({ setIsLoggedIn }) {
   const deleteProject = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/project/deleteProject/${id}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/project/deleteProject/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -87,7 +87,7 @@ function ClientDashboard({ setIsLoggedIn }) {
   const updateProject = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/project/updateProject/${id}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/project/updateProject/${id}`,
         form,
         {
           headers: {
@@ -110,7 +110,7 @@ function ClientDashboard({ setIsLoggedIn }) {
   const fetchUpdates = async (projectId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/updates/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/updates/${projectId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setUpdates((prev) => ({ ...prev, [projectId]: res.data }));
@@ -134,7 +134,7 @@ function ClientDashboard({ setIsLoggedIn }) {
     if (!message) return;
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/updates/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/updates/${projectId}`,
         { message },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -158,7 +158,7 @@ function ClientDashboard({ setIsLoggedIn }) {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/application/project/${projectId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/application/project/${projectId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -177,7 +177,7 @@ function ClientDashboard({ setIsLoggedIn }) {
   const updateStatus = async (applicationId, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/application/${applicationId}`,
+        `https://flowforge-backend-ud7x.onrender.com/api/application/${applicationId}`,
         { status },
         {
           headers: {
